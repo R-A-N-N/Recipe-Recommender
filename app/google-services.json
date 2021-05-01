@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "958042375806",
+    "firebase_url": "https://recipe-recommender-231a4.firebaseio.com",
+    "project_id": "recipe-recommender-231a4",
+    "storage_bucket": "recipe-recommender-231a4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:958042375806:android:132f8d2e065b06b717ba2f",
+        "android_client_info": {
+          "package_name": "com.aaditya.reciperecommender"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "958042375806-i9be55iv5fqhhl2ps8h141osovrl6i3u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBlVBuNp5z6xasuTGl63zUEroSSajrldA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "958042375806-i9be55iv5fqhhl2ps8h141osovrl6i3u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

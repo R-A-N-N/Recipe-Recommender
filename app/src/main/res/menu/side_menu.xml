@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <group android:checkableBehavior="single">
+
+
+        <item android:id="@+id/b1_pantry"
+            android:title="PANTRY"
+            android:icon="@drawable/ic_baseline_fastfood_24">
+        </item>
+
+        <item android:id="@+id/b2_basket"
+            android:title="BASKET"
+            android:icon="@drawable/ic_baseline_shopping_basket_24">
+        </item>
+
+        <item android:id="@+id/b3_list"
+            android:title="SHOPPING LIST"
+            android:icon="@drawable/ic_baseline_shopping_cart_24">
+        </item>
+
+        <item android:id="@+id/b4_favourite"
+            android:title="FAVOURITE RECIPES"
+            android:icon="@drawable/ic_baseline_favorite_24">
+        </item>
+
+        <item android:id="@+id/b5_settings"
+            android:title="SETTINGS"
+            android:icon="@drawable/ic_baseline_settings_24">
+        </item>
+
+        <item android:id="@+id/b6_logout"
+            android:title="LOG OUT"
+            android:icon="@drawable/ic_baseline_power_settings_new_24">
+        </item>
+
+    </group>
+
+</menu>
