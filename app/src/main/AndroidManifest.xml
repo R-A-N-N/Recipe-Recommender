@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.aaditya.reciperecommender">
+    package="com.example.reciperrecommender">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -12,36 +12,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".Splash_screen">
-
-        </activity>
-        <activity android:name=".Shopping_List" >
-
-        </activity>
-        <activity android:name=".pantry" >
-
-
-        </activity>
-        <activity android:name=".recipe_display" >
-
-        </activity>
-        <activity android:name=".Basket" />
-        <activity android:name=".SignupActivity" >
+        <activity android:name=".ResetPasswordActivity"></activity>
+        <activity android:name=".SignupActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Shopping_List" />
+        <activity android:name=".recipe_list" />
+        <activity android:name=".recipe_display" />
+        <activity android:name=".pantry" />
+        <activity android:name=".Settings" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".ResetPasswordActivity" />
-        <activity android:name=".MainActivity" >
+        <activity android:name=".favourite_recipes" />
+        <activity android:name=".Basket" />
+        <activity android:name=".Splash_screen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-        </activity>
-        <activity android:name=".favourite_recipes">
-
-        </activity>
-        <activity android:name=".recipe_list">
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <meta-data

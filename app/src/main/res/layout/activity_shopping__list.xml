@@ -71,17 +71,17 @@
 
 
 
-                <Button
-                    android:id="@+id/add"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=" ADD"
-                    android:textColor="@android:color/black"
-                    android:textSize="20dp"
-                    android:background="@drawable/rounded_corner_yellow"
-                    android:layout_margin="10dp">
+            <Button
+                android:id="@+id/add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" ADD"
+                android:textColor="@android:color/black"
+                android:textSize="20dp"
+                android:background="@drawable/rounded_corner_yellow"
+                android:layout_margin="10dp">
 
-                </Button>
+            </Button>
 
 
 

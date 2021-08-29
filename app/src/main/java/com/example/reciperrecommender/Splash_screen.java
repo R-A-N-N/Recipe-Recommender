@@ -1,4 +1,4 @@
-package com.aaditya.reciperecommender;
+package com.example.reciperrecommender;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,7 +9,6 @@ import android.os.Handler;
 public class Splash_screen extends AppCompatActivity {
 
     private final int SPLASH_DISPLAY_LENGTH = 4000;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,4 +25,5 @@ public class Splash_screen extends AppCompatActivity {
             }
         }, SPLASH_DISPLAY_LENGTH);
     }
+
 }

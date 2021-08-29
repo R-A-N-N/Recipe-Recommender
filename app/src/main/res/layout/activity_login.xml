@@ -16,26 +16,26 @@
         tools:ignore="MissingConstraints">
 
 
-       <androidx.cardview.widget.CardView
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           app:cardCornerRadius="20sp"
-           app:cardElevation="20sp"
-           app:cardBackgroundColor="@color/yellow">
-
-        <EditText
-            android:id="@+id/email"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:hint="@string/hint_email"
-            android:inputType="textEmailAddress"
-            android:textColor="@android:color/black"
-            android:textColorHint="@color/input_login_hint"
-            android:layout_margin="5dp"/>
+            app:cardCornerRadius="20sp"
+            app:cardElevation="20sp"
+            app:cardBackgroundColor="@color/yellow">
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/hint_email"
+                android:inputType="textEmailAddress"
+                android:textColor="@android:color/black"
+                android:textColorHint="@color/input_login_hint"
+                android:layout_margin="5dp"/>
 
 
-       </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
 
         <androidx.cardview.widget.CardView
@@ -47,16 +47,16 @@
             android:layout_marginTop="15dp">
 
 
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:hint="@string/hint_password"
-            android:inputType="textPassword"
-            android:textColor="@android:color/black"
-            android:textColorHint="@color/input_login_hint"
-            android:layout_margin="5dp"/>
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/hint_password"
+                android:inputType="textPassword"
+                android:textColor="@android:color/black"
+                android:textColorHint="@color/input_login_hint"
+                android:layout_margin="5dp"/>
 
         </androidx.cardview.widget.CardView>
 
