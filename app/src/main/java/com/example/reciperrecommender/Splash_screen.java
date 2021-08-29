@@ -10,6 +10,7 @@ public class Splash_screen extends AppCompatActivity {
 
     private final int SPLASH_DISPLAY_LENGTH = 4000;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,5 +26,4 @@ public class Splash_screen extends AppCompatActivity {
             }
         }, SPLASH_DISPLAY_LENGTH);
     }
-
 }

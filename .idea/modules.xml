@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Recipe_Recommender.iml" filepath="$PROJECT_DIR$/.idea/modules/Recipe_Recommender.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Recipe_Recommender.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Recipe_Recommender.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ReciperRecommender.iml" filepath="$PROJECT_DIR$/.idea/modules/ReciperRecommender.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ReciperRecommender.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ReciperRecommender.app.iml" />
     </modules>
   </component>
 </project>
