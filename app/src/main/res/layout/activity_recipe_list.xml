@@ -191,38 +191,7 @@
 
                 </androidx.cardview.widget.CardView>
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/card2"
-                    android:layout_width="170dp"
-                    android:layout_height="200dp"
-                    android:layout_gravity="end"
-                    android:layout_marginTop="-200dp"
-                    android:layout_marginEnd="30dp"
-                    android:layout_marginRight="30dp"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="20sp">
 
-                    <ImageView
-                        android:id="@+id/card2Img"
-                        android:layout_width="wrap_content"
-                        android:layout_height="150dp"
-                        android:layout_gravity="top"
-                        android:layout_margin="20dp"
-                        android:contentDescription="Pizza"
-                        android:outlineSpotShadowColor="@color/colorAccent"
-                        android:src="@drawable/pizzaa" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="170dp"
-                        android:gravity="center_horizontal"
-                        android:text="Cheese Pizza"
-                        android:textColor="@android:color/background_dark"
-                        android:textAlignment="center"
-                        android:textSize="20sp" />
-
-                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/card3"

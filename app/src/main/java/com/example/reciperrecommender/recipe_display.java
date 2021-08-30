@@ -18,17 +18,17 @@ public class recipe_display extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_display);
 
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.pantry);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.recipe_display);
         side_nave1 = (ImageButton) findViewById(R.id.side_nave);
 
 
-//        side_nave1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                mDrawerLayout.openDrawer(Gravity.LEFT);
-//
-//            }
-//        });
+        side_nave1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mDrawerLayout.openDrawer(Gravity.LEFT);
+
+            }
+        });
     }
 }

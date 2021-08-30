@@ -18,7 +18,7 @@ public class pantry extends AppCompatActivity {
     private ImageButton side_nave1;
     private DrawerLayout mDrawerLayout;
     private CardView search_recipes;
-    private CardView recipe_list;
+    private CardView recipe_list1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class pantry extends AppCompatActivity {
         side_nave1 = (ImageButton) findViewById(R.id.side_nave);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.pantry);
         search_recipes = (CardView) findViewById(R.id.search_recipes);
-        recipe_list = (CardView) findViewById(R.id.recipe_list);
+        recipe_list1 = (CardView) findViewById(R.id.see_list);
 
         side_nave1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,19 +38,19 @@ public class pantry extends AppCompatActivity {
             }
         });
 
-//        search_recipes.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(pantry.this, recipe_display.class));
-//            }
-//        });
-//
-//
-//        recipe_list.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(pantry.this, recipe_list.class));
-//            }
-//        });
+        search_recipes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(pantry.this, recipe_display.class));
+            }
+        });
+
+
+        recipe_list1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(pantry.this, recipe_list.class));
+            }
+        });
     }
 }

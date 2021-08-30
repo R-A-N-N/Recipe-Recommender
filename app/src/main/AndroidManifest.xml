@@ -20,13 +20,12 @@
 
         </activity>
         <activity android:name=".pantry" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
 
         </activity>
         <activity android:name=".recipe_display" >
+
+
 
         </activity>
         <activity android:name=".Basket" />
@@ -42,6 +41,10 @@
 
         </activity>
         <activity android:name=".recipe_list">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
 
