@@ -1,5 +1,6 @@
 package com.example.reciperrecommender;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -8,12 +9,15 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
-public class pantry extends AppCompatActivity {
+import com.google.android.material.navigation.NavigationView;
+
+public class pantry extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private ImageButton side_nave1;
     private DrawerLayout mDrawerLayout;
@@ -29,6 +33,10 @@ public class pantry extends AppCompatActivity {
         mDrawerLayout = (DrawerLayout) findViewById(R.id.pantry);
         search_recipes = (CardView) findViewById(R.id.search_recipes);
         recipe_list1 = (CardView) findViewById(R.id.see_list);
+
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
 
         side_nave1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,5 +60,39 @@ public class pantry extends AppCompatActivity {
                 startActivity(new Intent(pantry.this, recipe_list.class));
             }
         });
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        int id = item.getItemId();
+
+        if (id == R.id.b1_pantry) {
+
+            Intent intent = new Intent(this, pantry.class);
+            startActivity(intent);
+
+        } else if (id == R.id.b2_basket) {
+            Intent intent = new Intent(this, Basket.class);
+            startActivity(intent);
+
+        } else if (id == R.id.b3_list) {
+            Intent intent = new Intent(this, Shopping_List.class);
+            startActivity(intent);
+
+        } else if (id == R.id.b4_favourite) {
+            Intent intent = new Intent(this, favourite_recipes.class);
+            startActivity(intent);
+
+        } else if (id == R.id.b5_settings) {
+            Intent intent = new Intent(this, Settings.class);
+            startActivity(intent);
+
+        } else if (id == R.id.b6_logout) {
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+        }
+        return true;
+
     }
 }
