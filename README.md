@@ -6,8 +6,7 @@
 ![GitHub issues](https://img.shields.io/github/issues/IEEE-APSIT/recipe-recommender)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-The goal of this project is to use the largest publicly available collection of recipe data to build a recommendation system for ingredients and recipes.
-Recipes will be recommended according to the ingredients chosen by user in the application were most of the option from your pantry will be present.The login and favourite recipes data will be stored in local database. All the other information will be in firbase realtime database. The recipes will be displayed after sorting through database. 
+The goal of this project is to use the largest publicly available collection of recipe data to build a recommendation system for ingredients and recipes. Recipes will be recommended according to the ingredients chosen by the user in the application where most of the options from your pantry will be present. The login and favourite recipes data will be stored in a local database. All the other information will be in the firebase real-time database. The recipes will be displayed after sorting through the database.
 
 ## LAYOUTS
 - [X] Pantry Layout
