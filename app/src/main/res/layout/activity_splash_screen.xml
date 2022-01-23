@@ -11,7 +11,7 @@
     <pl.droidsonroids.gif.GifImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/splash_screen" />
+        android:src="@drawable/giphy" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/see_list"
