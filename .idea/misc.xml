@@ -5,9 +5,11 @@
       <map>
         <entry key="app/src/main/res/layout/activity_basket.xml" value="0.18070652173913043" />
         <entry key="app/src/main/res/layout/activity_favourite_recipes.xml" value="0.95" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.2128623188405797" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.24427083333333333" />
         <entry key="app/src/main/res/layout/activity_recipe_list.xml" value="0.24427083333333333" />
         <entry key="app/src/main/res/layout/activity_settings.xml" value="0.18070652173913043" />
+        <entry key="app/src/main/res/layout/activity_signup.xml" value="0.28072916666666664" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.2443981240229286" />
       </map>
     </option>
