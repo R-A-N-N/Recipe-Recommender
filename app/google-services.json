@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "23533588446",
+    "project_id": "reciperecommender-fb965",
+    "storage_bucket": "reciperecommender-fb965.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:23533588446:android:d07cb6d45692c58678d74f",
+        "android_client_info": {
+          "package_name": "com.example.reciperrecommender"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "23533588446-13hr4gn4n0tuog7f8pf6i30khh3qmf8g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.reciperrecommender",
+            "certificate_hash": "10dc58a599c53325b04ad50aee7e2f27096b298b"
+          }
+        },
+        {
+          "client_id": "23533588446-44maurg87vuk4fg0cqdtj7qared9psok.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrf6sP1NRMV9K6CvY7e3KOPmmeWogFEOM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "23533588446-44maurg87vuk4fg0cqdtj7qared9psok.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
