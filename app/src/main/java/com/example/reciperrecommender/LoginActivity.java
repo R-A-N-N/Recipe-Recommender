@@ -63,7 +63,7 @@ public class LoginActivity extends AppCompatActivity {
 
         // Configure Google Sign In
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestIdToken("23533588446-44maurg87vuk4fg0cqdtj7qared9psok.apps.googleusercontent.com")
                 .requestEmail()
                 .build();
 
@@ -121,13 +121,13 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(resultCode != RESULT_CANCELED) {
+//        if(resultCode != RESULT_CANCELED) {
             if (requestCode == RC_SIGN_IN)
             {
                 Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
                 handleSignInResult(task);
             }
-        }
+//        }
     }
 
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask)
@@ -136,10 +136,10 @@ public class LoginActivity extends AppCompatActivity {
         GoogleSignInAccount acc = completedTask.getResult(ApiException.class);
         Toast.makeText(LoginActivity.this , "Successful" , Toast.LENGTH_LONG).show();
         FirbaseGoogleAuth(acc);
-//        startActivity(new Intent(LoginActivity.this, pantry.class));
-
+        startActivity(new Intent(LoginActivity.this, pantry.class));
     }
     catch (ApiException e) {
+        Log.w(TAG, "signInResult:failed code=" + e.getStatusCode());
         Toast.makeText(LoginActivity.this , "Unsuccessful" , Toast.LENGTH_LONG).show();
     }
     }
