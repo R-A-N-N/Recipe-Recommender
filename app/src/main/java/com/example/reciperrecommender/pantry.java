@@ -8,7 +8,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,7 +17,6 @@ import android.widget.ImageButton;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class pantry extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -26,7 +24,7 @@ public class pantry extends AppCompatActivity implements NavigationView.OnNaviga
     private DrawerLayout mDrawerLayout;
     private CardView search_recipes;
     private CardView recipe_list1;
-    private FirebaseAuth firebaseAuth;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,12 +36,13 @@ public class pantry extends AppCompatActivity implements NavigationView.OnNaviga
         search_recipes = (CardView) findViewById(R.id.search_recipes);
         recipe_list1 = (CardView) findViewById(R.id.see_list);
 
-        firebaseAuth = FirebaseAuth.getInstance();
-        checkUser();
-
+        mAuth = FirebaseAuth.getInstance();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+
 
         side_nave1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,17 +66,6 @@ public class pantry extends AppCompatActivity implements NavigationView.OnNaviga
                 startActivity(new Intent(pantry.this, recipe_list.class));
             }
         });
-    }
-
-    private void checkUser(){
-        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
-        if(firebaseUser == null){
-            startActivity(new Intent(this, LoginActivity.class));
-        }
-        else{
-            String email = firebaseUser.getEmail();
-
-        }
     }
 
     @Override
@@ -107,10 +95,9 @@ public class pantry extends AppCompatActivity implements NavigationView.OnNaviga
             startActivity(intent);
 
         } else if (id == R.id.b6_logout) {
-//            Intent intent = new Intent(this, LoginActivity.class);
-//            startActivity(intent);
-              firebaseAuth.signOut();
-              Log.d("myTag", "after firebase signout");
+            FirebaseAuth.getInstance().signOut();
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
         }
         return true;
 

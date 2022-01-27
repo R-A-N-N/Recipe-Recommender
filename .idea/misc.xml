@@ -23,6 +23,8 @@
         <entry key="app/src/main/res/layout/activity_settings.xml" value="0.18070652173913043" />
         <entry key="app/src/main/res/layout/activity_signup.xml" value="0.28072916666666664" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.2443981240229286" />
+        <entry key="app/src/main/res/layout/side_nav.xml" value="0.24010416666666667" />
+        <entry key="app/src/main/res/menu/side_menu.xml" value="0.26979166666666665" />
       </map>
     </option>
   </component>
