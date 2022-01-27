@@ -43,8 +43,9 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d("myTag","back to this page");
         setContentView(R.layout.activity_login);
-        
+        Log.d("myTag","back to this page after set content");
         // ...
         // Initialize Firebase Auth
 
