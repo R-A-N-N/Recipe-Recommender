@@ -6,17 +6,20 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class Basket extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private ImageButton side_nave1;
     private DrawerLayout mDrawerLayout;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +28,8 @@ public class Basket extends AppCompatActivity implements NavigationView.OnNaviga
 
         side_nave1 = (ImageButton) findViewById(R.id.side_nave);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.basket);
+
+        mAuth = FirebaseAuth.getInstance();
 
         side_nave1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,6 +69,7 @@ public class Basket extends AppCompatActivity implements NavigationView.OnNaviga
             startActivity(intent);
 
         } else if (id == R.id.b6_logout) {
+            mAuth.signOut();
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
         }

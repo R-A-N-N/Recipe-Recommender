@@ -8,6 +8,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,6 +18,7 @@ import android.widget.ImageButton;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class pantry extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -37,11 +39,11 @@ public class pantry extends AppCompatActivity implements NavigationView.OnNaviga
         recipe_list1 = (CardView) findViewById(R.id.see_list);
 
         mAuth = FirebaseAuth.getInstance();
+        checkUser();
+
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-
 
 
         side_nave1.setOnClickListener(new View.OnClickListener() {
@@ -66,6 +68,17 @@ public class pantry extends AppCompatActivity implements NavigationView.OnNaviga
                 startActivity(new Intent(pantry.this, recipe_list.class));
             }
         });
+    }
+
+    private void checkUser() {
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser == null){
+            startActivity(new Intent(this, LoginActivity.class));
+        }
+        else{
+            String email = currentUser.getEmail();
+            Log.d("Tag", "the email id is: "+ email);
+        }
     }
 
     @Override
@@ -95,8 +108,9 @@ public class pantry extends AppCompatActivity implements NavigationView.OnNaviga
             startActivity(intent);
 
         } else if (id == R.id.b6_logout) {
-            FirebaseAuth.getInstance().signOut();
+            mAuth.signOut();
             Intent intent = new Intent(this, LoginActivity.class);
+            Log.d("myTag","IS this working");
             startActivity(intent);
         }
         return true;
