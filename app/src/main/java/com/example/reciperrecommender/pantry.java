@@ -19,6 +19,8 @@ import android.widget.ImageButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class pantry extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -27,6 +29,8 @@ public class pantry extends AppCompatActivity implements NavigationView.OnNaviga
     private CardView search_recipes;
     private CardView recipe_list1;
     private FirebaseAuth mAuth;
+    private FirebaseDatabase db = FirebaseDatabase.getInstance();
+    private DatabaseReference root = db.getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,7 @@ public class pantry extends AppCompatActivity implements NavigationView.OnNaviga
         mAuth = FirebaseAuth.getInstance();
         checkUser();
 
+        root.child("pantry").child("dairy").setValue("milk");
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
