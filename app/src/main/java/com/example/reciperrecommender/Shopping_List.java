@@ -4,23 +4,53 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Shopping_List extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private ImageButton side_nave1;
     private DrawerLayout mDrawerLayout;
+    private Button addBtn;
+    private EditText regShoplistItem;
+
+    FirebaseDatabase rootNode;
+    DatabaseReference reference;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shopping__list);
+
+        addBtn = findViewById(R.id.add);
+        regShoplistItem = findViewById(R.id.add_item);
+
+        addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                rootNode = FirebaseDatabase.getInstance();
+                reference = rootNode.getReference("shoppingList");
+
+                String shoplist_item = regShoplistItem.getText().toString();
+
+                shoppingListHelper helperClass = new shoppingListHelper(shoplist_item);
+
+
+                reference.setValue(helperClass);
+            }
+        });
 
         side_nave1 = (ImageButton) findViewById(R.id.side_nave);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.shopping_list);
