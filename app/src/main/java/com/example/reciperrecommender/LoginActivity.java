@@ -103,7 +103,7 @@ public class LoginActivity extends AppCompatActivity {
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
         Log.d("Tag","cuurent user is " + currentUser);
-        updateUI(currentUser);
+        //updateUI(currentUser);
     }
 
     private void updateUI(FirebaseUser currentUser) {
