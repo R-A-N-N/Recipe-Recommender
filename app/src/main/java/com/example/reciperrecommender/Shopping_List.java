@@ -19,6 +19,10 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.List;
+
+import kotlin.collections.ArrayDeque;
+
 public class Shopping_List extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private ImageButton side_nave1;
     private DrawerLayout mDrawerLayout;
@@ -28,11 +32,15 @@ public class Shopping_List extends AppCompatActivity implements NavigationView.O
     FirebaseDatabase rootNode;
     DatabaseReference reference;
 
+    List<String> shoppingList;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shopping__list);
+
+        shoppingList = new ArrayDeque<>();
 
         addBtn = findViewById(R.id.add);
         regShoplistItem = findViewById(R.id.add_item);
@@ -45,10 +53,12 @@ public class Shopping_List extends AppCompatActivity implements NavigationView.O
 
                 String shoplist_item = regShoplistItem.getText().toString();
 
-                shoppingListHelper helperClass = new shoppingListHelper(shoplist_item);
+                shoppingList.add(shoplist_item);
+
+//              shoppingListHelper helperClass = new shoppingListHelper(shoplist_item);
 
 
-                reference.setValue(helperClass);
+                reference.setValue(shoppingList);
             }
         });
 
