@@ -88,7 +88,7 @@
         </LinearLayout>
 
         <ListView
-            android:id="@+id/list"
+            android:id="@+id/shoplist"
             android:layout_width="match_parent"
             android:layout_height="550dp"
             android:choiceMode="multipleChoice">

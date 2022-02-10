@@ -1,24 +1,32 @@
 package com.example.reciperrecommender;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ListView;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import kotlin.collections.ArrayDeque;
@@ -33,6 +41,8 @@ public class Shopping_List extends AppCompatActivity implements NavigationView.O
     DatabaseReference reference;
 
     List<String> shoppingList;
+    ListView shopListView;
+    ArrayList<String> shopArrayList = new ArrayList<>();
 
 
     @Override
@@ -40,7 +50,7 @@ public class Shopping_List extends AppCompatActivity implements NavigationView.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shopping__list);
 
-        shoppingList = new ArrayDeque<>();
+        shoppingList = new ArrayList<>();
 
         addBtn = findViewById(R.id.add);
         regShoplistItem = findViewById(R.id.add_item);
@@ -59,6 +69,46 @@ public class Shopping_List extends AppCompatActivity implements NavigationView.O
 
 
                 reference.setValue(shoppingList);
+
+
+
+                ArrayAdapter<String> shopArrayAdapter = new ArrayAdapter<String>(Shopping_List.this,android.R.layout.simple_list_item_1,shopArrayList);
+
+                shopListView = (ListView) findViewById(R.id.shoplist);
+                shopListView.setAdapter(shopArrayAdapter);
+
+                reference.addChildEventListener(new ChildEventListener() {
+                    @Override
+                    public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                        String value = snapshot.getValue(String.class);
+                        Log.d("list","The value is "+value);
+                        shopArrayList.add(value);
+                        Log.d("list","The list is "+shopArrayList);
+                        shopArrayAdapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+//                        shopArrayAdapter.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+                    }
+
+                    @Override
+                    public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
             }
         });
 
