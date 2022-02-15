@@ -8,6 +8,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
@@ -42,7 +43,7 @@ public class Shopping_List extends AppCompatActivity implements NavigationView.O
 
     List<String> shoppingList;
     ListView shopListView;
-    ArrayList<String> shopArrayList = new ArrayList<>();
+
 
 
     @Override
@@ -61,36 +62,37 @@ public class Shopping_List extends AppCompatActivity implements NavigationView.O
                 rootNode = FirebaseDatabase.getInstance();
                 reference = rootNode.getReference("shoppingList");
 
+                // add items to firebase
                 String shoplist_item = regShoplistItem.getText().toString();
 
                 shoppingList.add(shoplist_item);
 
-//              shoppingListHelper helperClass = new shoppingListHelper(shoplist_item);
-
-
                 reference.setValue(shoppingList);
 
 
+                // retrieve items from firebase to print in app
+                ArrayList<String> shopArrayList = new ArrayList<>();
 
                 ArrayAdapter<String> shopArrayAdapter = new ArrayAdapter<String>(Shopping_List.this,android.R.layout.simple_list_item_1,shopArrayList);
 
                 shopListView = (ListView) findViewById(R.id.shoplist);
                 shopListView.setAdapter(shopArrayAdapter);
 
+                shopArrayList.clear();
+
                 reference.addChildEventListener(new ChildEventListener() {
                     @Override
                     public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                         String value = snapshot.getValue(String.class);
-                        Log.d("list","The value is "+value);
                         shopArrayList.add(value);
-                        Log.d("list","The list is "+shopArrayList);
                         shopArrayAdapter.notifyDataSetChanged();
                     }
 
                     @Override
                     public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
 
-//                        shopArrayAdapter.notifyDataSetChanged();
+                        shopArrayAdapter.notifyDataSetChanged();
+                        shopArrayAdapter.clear();
                     }
 
                     @Override
