@@ -38,12 +38,11 @@ public class Shopping_List extends AppCompatActivity implements NavigationView.O
     private Button addBtn;
     private EditText regShoplistItem;
 
-    FirebaseDatabase rootNode;
-    DatabaseReference reference;
+    FirebaseDatabase rootNode = FirebaseDatabase.getInstance();
+    DatabaseReference reference = rootNode.getReference("shoppingList");
 
-    List<String> shoppingList;
+    List<String> shoppingList= new ArrayList<>();
     ListView shopListView;
-
 
 
     @Override
@@ -51,23 +50,25 @@ public class Shopping_List extends AppCompatActivity implements NavigationView.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shopping__list);
 
-        shoppingList = new ArrayList<>();
+//        shoppingList = new ArrayList<>();
 
         addBtn = findViewById(R.id.add);
         regShoplistItem = findViewById(R.id.add_item);
 
+//        rootNode = FirebaseDatabase.getInstance();
+//        reference = rootNode.getReference("shoppingList");
+
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                rootNode = FirebaseDatabase.getInstance();
-                reference = rootNode.getReference("shoppingList");
+
 
                 // add items to firebase
                 String shoplist_item = regShoplistItem.getText().toString();
 
                 shoppingList.add(shoplist_item);
 
-                reference.setValue(shoppingList);
+                reference.push().setValue(shoppingList);
 
 
                 // retrieve items from firebase to print in app
@@ -83,9 +84,15 @@ public class Shopping_List extends AppCompatActivity implements NavigationView.O
                 reference.addChildEventListener(new ChildEventListener() {
                     @Override
                     public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                        String value = snapshot.getValue(String.class);
-                        shopArrayList.add(value);
-                        shopArrayAdapter.notifyDataSetChanged();
+//                        String value = snapshot.getValue(String.class);
+//                        shopArrayList.add(value);
+//                        shopArrayAdapter.notifyDataSetChanged();
+
+                        for(DataSnapshot item: snapshot.getChildren()){
+                            String value = item.getValue(String.class);
+                            shopArrayList.add(value);
+                            shopArrayAdapter.notifyDataSetChanged();
+                        }
                     }
 
                     @Override
